@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Projet_intranet</string>
+    <string name="mess_mod">Good_Luck</string>
+    <string name="btn_deconnecter">SIGN OUT</string>
+</resources>
