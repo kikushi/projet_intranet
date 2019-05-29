@@ -38,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn_deco = findViewById(R.id.button_dec);
         btn_deco.setOnClickListener(decoBtnListener);
-
-
-
-
         mFirebaseAuth = FirebaseAuth.getInstance();
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -90,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             } else if(resultCode ==RESULT_CANCELED){
                 Toast.makeText(this,"Signed In Canceled",Toast.LENGTH_SHORT).show();
                 finish();
+
 
             }
 
