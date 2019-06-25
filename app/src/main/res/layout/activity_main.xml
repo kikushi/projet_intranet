@@ -18,6 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button_creerColis"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/myBouttonStyle"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="307dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <Button
         android:id="@+id/button_dec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

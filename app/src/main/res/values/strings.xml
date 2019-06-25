@@ -2,4 +2,8 @@
     <string name="app_name">Projet_intranet</string>
     <string name="mess_mod">Good_Luck</string>
     <string name="btn_deconnecter">SIGN OUT</string>
+    <string name="myBouttonStyle">+</string>
+    <string name="todo">TODO</string>
+    <string name="ajoutez_une_image_du_colis">Ajoutez une image du colis</string>
+    <string name="terminer">TERMINER</string>
 </resources>

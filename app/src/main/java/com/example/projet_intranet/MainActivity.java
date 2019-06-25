@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String ANONYMOUS = "anonymous";
     private TextView mtextview;
     private Button btn_deco;
+    private Button btn_creerColis;
+
 
 
 
@@ -37,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn_deco = findViewById(R.id.button_dec);
+        btn_creerColis = findViewById(R.id.button_creerColis);
+
+        btn_creerColis.setOnClickListener(decoBtnColis);
+
         btn_deco.setOnClickListener(decoBtnListener);
         mFirebaseAuth = FirebaseAuth.getInstance();
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
@@ -77,6 +83,19 @@ public class MainActivity extends AppCompatActivity {
         AuthUI.getInstance().signOut(this);
 
     }
+
+    private View.OnClickListener decoBtnColis = new View.OnClickListener() {
+        @Override
+        public void onClick(View v){
+            decoBtnColisClicked();
+        }
+
+    };
+
+    private void decoBtnColisClicked(){
+        startActivity(new Intent(getApplicationContext(),CreerLivraison.class));
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
