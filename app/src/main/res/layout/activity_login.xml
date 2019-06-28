@@ -28,10 +28,9 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="email"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        tools:layout_editor_absoluteX="99dp" />
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="347dp" />
 </android.support.constraint.ConstraintLayout>
