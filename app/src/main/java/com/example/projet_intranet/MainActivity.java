@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mtextview;
     private Button btn_deco;
     private Button btn_creerColis;
+    private Button btnTracking;
 
 
 
@@ -40,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn_deco = findViewById(R.id.button_dec);
         btn_creerColis = findViewById(R.id.button_creerColis);
+        btnTracking = (Button) findViewById(R.id.btnTracking);
 
         btn_creerColis.setOnClickListener(decoBtnColis);
+        btnTracking.setOnClickListener(decoBtnTracking);
 
         btn_deco.setOnClickListener(decoBtnListener);
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -95,6 +98,19 @@ public class MainActivity extends AppCompatActivity {
     private void decoBtnColisClicked(){
         startActivity(new Intent(getApplicationContext(),CreerLivraison.class));
     }
+
+    private View.OnClickListener decoBtnTracking = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            decoBtnTrackingClicked();
+        }
+    };
+
+    private void decoBtnTrackingClicked() {
+
+        startActivity(new Intent(getApplicationContext(),Tracking.class));
+    }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){

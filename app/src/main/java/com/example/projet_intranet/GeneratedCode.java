@@ -17,10 +17,10 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class GeneratedCode extends AppCompatActivity {
 
-    ImageView image;
-    Button btnOk;
-    String code;
-    TextView textView;
+   private ImageView image;
+   private Button btnOk;
+   private String code;
+   private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

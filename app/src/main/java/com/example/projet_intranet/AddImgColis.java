@@ -23,8 +23,8 @@ import android.widget.Toast;
 
 public class AddImgColis extends AppCompatActivity {
 
-    ImageView ivImage;
-    Integer REQUEST_CAMERA =1, SELECT_FILE=0;
+   private ImageView ivImage;
+    private Integer REQUEST_CAMERA =1, SELECT_FILE=0;
     private static final int REQUEST_ID_READ_WRITE_PERMISSION = 99;
     private Button btnFinal;
     @Override

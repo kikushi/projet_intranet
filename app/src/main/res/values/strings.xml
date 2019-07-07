@@ -6,4 +6,9 @@
     <string name="todo">TODO</string>
     <string name="ajoutez_une_image_du_colis">Ajoutez une image du colis</string>
     <string name="terminer">TERMINER</string>
+    <string name="scanner_votre_code_qr">Scanner Votre code QR</string>
+    <string name="traker_votre">Traker votre</string>
+    <string name="tracker">Tracker</string>
+    <string name="ou">ou</string>
+    <string name="entrez_le_numero_de_votre_colis">Entrez le numero de votre colis</string>
 </resources>

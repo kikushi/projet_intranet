@@ -65,6 +65,8 @@ public class CreerLivraison extends AppCompatActivity {
 
     private void decoBtnSuivantClicked() {
 
+        //recuperation des variables 
+
         startActivity(new Intent(getApplicationContext(),DestinationColis.class));
     }
 }
