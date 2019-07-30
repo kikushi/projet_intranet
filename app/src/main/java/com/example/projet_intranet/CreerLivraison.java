@@ -14,7 +14,9 @@ public class CreerLivraison extends AppCompatActivity {
     private Button btnSuivant;
     private EditText description;
     private EditText poids, prix;
-
+    private String description_;
+    private Double poids_, prix_;
+    Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +68,21 @@ public class CreerLivraison extends AppCompatActivity {
     private void decoBtnSuivantClicked() {
 
         //recuperation des variables 
+        bundle = new Bundle();
+        description_ = description.getText().toString().trim();
 
-        startActivity(new Intent(getApplicationContext(),DestinationColis.class));
+        String pd = poids.getText().toString().trim();
+        poids_ = Double.parseDouble(pd);
+
+        String prx = prix.getText().toString().trim();
+        prix_ = Double.parseDouble(prx);
+
+        bundle.putString("description",description_);
+        bundle.putDouble("poids",poids_);
+        bundle.putDouble("prix",prix_);
+
+        Intent intent = new Intent(this,DestinationColis.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

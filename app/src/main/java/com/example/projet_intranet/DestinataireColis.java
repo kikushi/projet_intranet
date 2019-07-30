@@ -2,12 +2,12 @@ package com.example.projet_intranet;
 
 public class DestinataireColis {
 
-    private String id, nom, prenom, adresse, telephone;
+    private String  nom, prenom, adresse, telephone;
 
     public DestinataireColis(){}
 
-    public DestinataireColis(String id, String nom, String prenom, String adresse, String telephone){
-        this.id = id;
+    public DestinataireColis( String nom, String prenom, String adresse, String telephone){
+
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -15,14 +15,6 @@ public class DestinataireColis {
     }
 
     // GETTERS AND SETTERS
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNom() {
         return nom;
