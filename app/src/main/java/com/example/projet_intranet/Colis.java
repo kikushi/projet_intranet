@@ -1,13 +1,15 @@
 package com.example.projet_intranet;
 
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.firebase.firestore.ServerTimestamp;
 
 import java.util.Date;
 import java.util.HashMap;
 
-public class Colis {
+public class Colis implements Parcelable {
 
     private String  userID,description, adresse;
     private String nomDest, prenomDest,adresseDest, telDest;
@@ -50,6 +52,30 @@ public class Colis {
 
 
     // GETTERS AND SETTERS
+
+    protected Colis(Parcel in) {
+        userID = in.readString();
+        description = in.readString();
+        adresse = in.readString();
+        nomDest = in.readString();
+        prenomDest = in.readString();
+        adresseDest = in.readString();
+        telDest = in.readString();
+        poids = in.readDouble();
+        prix = in.readDouble();
+    }
+
+    public static final Creator<Colis> CREATOR = new Creator<Colis>() {
+        @Override
+        public Colis createFromParcel(Parcel in) {
+            return new Colis(in);
+        }
+
+        @Override
+        public Colis[] newArray(int size) {
+            return new Colis[size];
+        }
+    };
 
     @ServerTimestamp public Date getDateCreated() { return dateCreated; }
     /* public String getColisID() {
@@ -142,4 +168,21 @@ public class Colis {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(userID);
+        dest.writeString(description);
+        dest.writeString(adresse);
+        dest.writeString(nomDest);
+        dest.writeString(prenomDest);
+        dest.writeString(adresseDest);
+        dest.writeString(telDest);
+        dest.writeDouble(poids);
+        dest.writeDouble(prix);
+    }
 }

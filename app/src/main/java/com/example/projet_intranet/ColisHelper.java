@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Date;
@@ -125,8 +126,21 @@ public class ColisHelper {
 
     }
 
-    public void trackColis(String id){
-
+    public void trackColis(String id,final ColisIdCallback colisIdCallback){
+        DocumentReference docRef = mFirestore.collection("cities").document("id");
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Colis colis = documentSnapshot.toObject(Colis.class);
+                colisIdCallback.recupererColis(colis);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Document doesn't exist!!!",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

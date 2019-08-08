@@ -58,6 +58,11 @@ public class GeneratedCode extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
+
+            @Override
+            public void recupererColis(Colis colis) {
+                //rien a faire
+            }
         });
 
     }
