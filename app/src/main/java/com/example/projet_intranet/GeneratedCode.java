@@ -59,10 +59,7 @@ public class GeneratedCode extends AppCompatActivity {
                 }
             }
 
-            @Override
-            public void recupererColis(Colis colis) {
-                //rien a faire
-            }
+
         });
 
     }

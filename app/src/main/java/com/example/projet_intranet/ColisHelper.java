@@ -126,13 +126,17 @@ public class ColisHelper {
 
     }
 
-    public void trackColis(String id,final ColisIdCallback colisIdCallback){
-        DocumentReference docRef = mFirestore.collection("cities").document("id");
+    public void trackColis(String id,final Track colisIdCallback){
+        DocumentReference docRef = mFirestore.collection("Colis").document(id);
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @SuppressLint("RestrictedApi")
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 Colis colis = documentSnapshot.toObject(Colis.class);
+
+                //String d = colis.getDescription();
                 colisIdCallback.recupererColis(colis);
+                Toast.makeText(getApplicationContext(),"Document exist!!!",Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @SuppressLint("RestrictedApi")

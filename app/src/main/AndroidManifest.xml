@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ColisFound"></activity>
+        <activity android:name=".Edition"></activity>
+        <activity android:name=".ColisFound" />
         <activity android:name=".Tracking" />
         <activity android:name=".GeneratedCode" />
         <activity android:name=".AddImgColis" />

@@ -82,34 +82,15 @@ public class Tracking extends AppCompatActivity {
     };
 
     private void decoBtnSearchClicked() {
-
-        startActivity(new Intent(getApplicationContext(),ColisFound.class));
+        String j = idColis.getText().toString().trim();
+        Intent intent = new Intent(this,ColisFound.class);
+        intent.putExtra("id",j);
+        startActivity(intent);
     }
 
 
     // declenchement du btnScan
 
-    /*
-    private View.OnClickListener decoBtnScan = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            decoBtnScanClicked();
-        }
-    };
-
-    private void decoBtnScanClicked() {
-
-        final Activity activity = this;
-        IntentIntegrator integrator = new IntentIntegrator(activity);
-        integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-        integrator.setPrompt("Scan");
-        integrator.setCameraId(0);
-        integrator.setBeepEnabled(false);
-        integrator.setBarcodeImageEnabled(false);
-        integrator.initiateScan();
-
-        //startActivity(new Intent(getApplicationContext(),DestinationColis.class));
-    }*/
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
@@ -119,27 +100,7 @@ public class Tracking extends AppCompatActivity {
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
             }
             else {
-               // id = result.getContents();
-                /*
-                ColisHelper helper = new ColisHelper();
-                helper.trackColis(result.getContents(), new ColisIdCallback() {
-                    @Override
-                    public void onCallback(String value) {
-                        //rien faire;
-                    }
 
-                    @Override
-                    public void recupererColis(Colis colis) {
-                       //extras.putString("Description");
-                        leColis = colis;
-                    }
-                });
-
-                Intent intent = new Intent(this,ColisFound.class);
-                intent.putExtra("Colis",leColis);
-                startActivity(intent);*/
-                //extras = data.getExtras();
-                //id =extras.getString("SCAN_RESULT");
                 String i = result.getContents();
                 Intent intent = new Intent(this,ColisFound.class);
                 intent.putExtra("id",i);

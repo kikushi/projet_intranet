@@ -11,4 +11,6 @@
     <string name="tracker">Tracker</string>
     <string name="ou">ou</string>
     <string name="entrez_le_numero_de_votre_colis">Entrez le numero de votre colis</string>
+    <string name="modifier">MODIFIER</string>
+    <string name="retour">RETOUR</string>
 </resources>
